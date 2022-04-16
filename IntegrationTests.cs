@@ -8,7 +8,7 @@ public class IntegrationTests
     {
         var httpClient = new HttpClient()
         {
-            BaseAddress = new Uri("http://host.docker.internal:5197"),
+            BaseAddress = new Uri("http://172.17.0.1:80"),
         };
         var response = await httpClient.GetAsync("/WeatherForecast");
         var content = await response.Content.ReadAsStringAsync();
